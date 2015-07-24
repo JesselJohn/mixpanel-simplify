@@ -4,12 +4,14 @@
 <script src="mixpanel.js"></script>
 <script src="tracking.js"></script>
 <script>
+// Initial settings which will switch on or off the mixpanel events
 var events = {
 	"Sign_In":"ON",
 	"Sign_Up":"OFF",
 	"Post_Your_Requirement":"ON"
 };
 
+// Create an instance of tracking object by passing settings
 var x = _track(events);
 
 function signin(){
