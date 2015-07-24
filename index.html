@@ -6,21 +6,57 @@
 <script>
 var events = {
 	"Sign_In":"ON",
-	"Sign_Up":"OFF"
+	"Sign_Up":"OFF",
+	"Post_Your_Requirement":"ON"
 };
 
-
-
 var x = _track(events);
-var x2 = _track(events);
 
-function posttomixpanel(eventType){
-	x.selectTrackOption(eventType);
+function signin(){
+	x.selectTrackOption({
+		name:"Sign_In",
+		details:{
+			"name":"Jessel",
+			"age":22,
+			"college":{
+				'A':{
+					"b":1,
+					"c":2
+				},
+				'X':{
+					"y":3,
+					"z":4,
+					"t":5
+				}
+			}
+		}
+	});
+}
+
+function signup(){
+	x.selectTrackOption({
+		name:"Sign_Up",
+		details:{
+			"name":"Amit",
+			"age":25
+		}
+	});
+}
+
+function PYR(){
+	x.selectTrackOption({
+		name:"Post_Your_Requirement",
+		details:{
+			"name":"Sagar",
+			"age":25
+		}
+	});
 }
 </script>
 </head>
 <body>
-<button id="SignIn" onclick="posttomixpanel('Sign_In')">SignIn</button>
-<button id="SignUp" onclick="posttomixpanel('Sign_Up')">SignUp</button>
+<button id="SignIn" onclick="signin()">SignIn</button>
+<button id="SignUp" onclick="signup()">SignUp</button>
+<button id="PYR" onclick="PYR()">PYR</button>
 </body>
 </html>

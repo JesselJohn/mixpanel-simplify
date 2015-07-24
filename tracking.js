@@ -19,9 +19,13 @@
     };
 
     // Assign properties that will be shared between instances
-    _constructor.prototype.selectTrackOption = function (option) {
+    _constructor.prototype.selectTrackOption = function (options) {
+        // Initialize all properties which are sent to this function which is required for tracking.
+        var track_name = options.name,
+            track_details = options.details;
+
         //If the property is disabled then don't execute
-        if(this.status[option] === "OFF"){
+        if(this.status[track_name] === "OFF"){
             return;
         }
 
@@ -34,23 +38,12 @@
 
             w.addEventListener('message', function (e) {
                 // Track data in mixpanel on successful response
-                mixpanel.track(option, e.data);
+
+                mixpanel.track(track_name, e.data);
             }, false);
 
             //
-            w.postMessage({
-                "age": 28,
-                "gender": "male",
-                "source": "facebook",
-                "details":{
-                    "firstName":"Amit",
-                    "lastName":"Dubey",
-                    "languages":{
-                        "1":"hindi",
-                        "2":"english"
-                    }
-                }
-            });
+            w.postMessage(track_details);
         }else{
             // Add a fallback if worker doesnt exist
         }
