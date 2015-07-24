@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="mixpanel.js"></script>
+<script src="tracking.js"></script>
+<script>
+var events = {
+	"Sign_In":"ON",
+	"Sign_Up":"OFF"
+};
+
+
+
+var x = _track(events);
+var x2 = _track(events);
+
+function posttomixpanel(eventType){
+	x.selectTrackOption(eventType);
+}
+</script>
+</head>
+<body>
+<button id="SignIn" onclick="posttomixpanel('Sign_In')">SignIn</button>
+<button id="SignUp" onclick="posttomixpanel('Sign_Up')">SignUp</button>
+</body>
+</html>
