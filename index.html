@@ -6,9 +6,16 @@
 <script>
 // Initial settings which will switch on or off the mixpanel events
 var events = {
-	"Sign_In":"ON",
-	"Sign_Up":"OFF",
-	"Post_Your_Requirement":"ON"
+	"superProperties":{
+		"VisitorId":189022
+	},
+	"status":{
+		"Sign_In":"ON",
+		"Sign_Up":"OFF",
+		"Post_Your_Requirement":"ON"
+	},
+	"token":"ADD_TOKEN",
+	"seperator":"|"
 };
 
 // Create an instance of tracking object by passing settings
@@ -18,7 +25,7 @@ function signin(){
 	x.selectTrackOption({
 		name:"Sign_In",
 		details:{
-			"name":"Jessel",
+			"name":"ABC",
 			"age":22,
 			"college":{
 				'A':{
@@ -39,7 +46,7 @@ function signup(){
 	x.selectTrackOption({
 		name:"Sign_Up",
 		details:{
-			"name":"Amit",
+			"name":"DEF",
 			"age":25
 		}
 	});
@@ -49,7 +56,7 @@ function PYR(){
 	x.selectTrackOption({
 		name:"Post_Your_Requirement",
 		details:{
-			"name":"Sagar",
+			"name":"XYZ",
 			"age":25
 		}
 	});
