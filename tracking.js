@@ -1,5 +1,6 @@
 (function (window) {
     var propertySeperator = "_",
+    userAction = "$direct",
     cloneObject = function(params){
         try{
             // Clone Object
@@ -36,6 +37,15 @@
 
         //Return object with associated properties and methods
         return this;
+    };
+
+    // Methods to track action
+    _contructor.prototype.setAction = function(action){
+        userAction = action;
+    };
+
+    _constructor.prototype.getAction = function(){
+        return userAction;
     };
 
 
@@ -154,6 +164,9 @@
         }
 
         mixpanel.track(track_name, this.toFlatObject(track_details));
+
+        // Reset action for next track till another action is recorded
+        userAction = "$direct";
     };
 
     // If there isn't any "_track" property on window then assign it.
