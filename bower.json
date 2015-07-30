@@ -1,6 +1,6 @@
 {
   "name": "mixpanel-simplify",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/JesselJohn/mixpanel-simplify",
   "authors": [
     "Jessel John <jesseljohn130@gmail.com>"
@@ -8,7 +8,6 @@
   "description": "Library which simplifies mixpanel tracking.",
   "main": "tracking.js",
   "license": "MIT",
-  "main": "tracking.js",
   "ignore": [
     "**/.*",
     "node_modules",
